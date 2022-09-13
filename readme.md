@@ -1,4 +1,4 @@
-### Hacker-rank challenges and their solutions
+### Hacker-rank challenges and their solutions | Rizvi
 
 
 ## Note : 
