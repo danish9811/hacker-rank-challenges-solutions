@@ -7,11 +7,13 @@ namespace HackerRank\Interview\Kit\Methods;
 class Methods {
 
     /**
+     * Returns an array of random numbers between the given upper and lower limit and of certain length/arraysize
      * @param int $arrayLength
      * @param int $lowerLimit
      * @param int $upperLimit
      * @return array
      * @throws Exception
+     * @author danish mehmood
      */
     public static function getRandomArray(int $arrayLength = 10, int $lowerLimit = 10, int $upperLimit = 99): array {
         $array = [];
@@ -35,6 +37,7 @@ class Methods {
      * @param int $upperLimit
      * @param int $elementsToPush
      * @return array
+     * @author danish mehmood
      */
     public static function fillArrayWithRandomNumbers(array $array, int $elementsToPush, int $lowerLimit = 10, int $upperLimit = 90): array {
         if ($elementsToPush <= count($array))
@@ -44,6 +47,15 @@ class Methods {
         return $array;
     }
 
+
+    /**
+     * Method to get an array filled with table values. 
+     * <br>Suppose 5 and 4 are given, the array will be [5, 10, 15, 20]
+     * @param int $n the table number, whose array has to be created, default is 5
+     * @param int $limit the limit of the table, default is 10
+     * @return array filled with table numbers
+     * @author danish mehmood
+     **/
     public static function getTableArr(int $n = 5, int $limit = 10) : array {
         $tableArray = [];
         for ($i=0; $i < $limit; $i++) { 
