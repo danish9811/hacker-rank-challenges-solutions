@@ -1,41 +1,43 @@
 <?php
 
-include('methods.php');
+// sock pars challenge solved 
 
-// challenge link
-// https://www.hackerrank.com/challenges/sock-merchant/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=warmup
+$arr = [1, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 1, 1, 1, 1];
 
-// output sample
+$newArray = array_count_values($arr);
 
-// your code
-
-function sockMerchant(int $n, array $arr) {
-    for ($i = 0; $i < $n; $i++) {
-        $arr[] = readline('Number : ');
-    }
-
-    sort($arr);
-    // all the elements are sorted now
-
-    $counter = 0;
-    $pairCounter = 0;
-    for ($i = 0; $i < $n; $i++) {
-        $pointer = $arr[$i];
+$pairCounter = [];
+foreach ($newArray as $item) {
+    if ($item >= 2 && $item % 2 == 1) {
+        $item = $item - 1;
+        $pairCounter[] = $item / 2;
+    } elseif ($item % 2 == 0) {
+        $pairCounter[] = $item / 2;
     }
 }
 
-// DO THE SOLUTION IN SINGLE LOOP
+echo array_sum($pairCounter);
+sort($newArray);
+print_r(array_count_values($newArray));
 
+// process finished with exit code 0
 
-// cut-down the array
-// count the distinct elements
-// pick up each element and compare it the array elements
+function sockMerchant($n, $ar) {
+    $n = readline('how many numbers you want to enter ');
+    for ($i = 0; $i < $n; $i++) {
+        $ar[0] = readline('enter number at index [' . $i . '] : ');
+    }
+    $newArray = array_count_values($ar);
 
-// pending challenge
+    $pairCounter = [];
+    foreach ($newArray as $item) {
+        if ($item >= 2 && $item % 2 == 1) {
+            $item = $item - 1;
+            $pairCounter[] = $item / 2;
+        } elseif ($item % 2 == 0) {
+            $pairCounter[] = $item / 2;
+        }
+    }
 
-
-// copied file path by ctrl+shift+C
-///home/danish981/OTIF-projects/d-world/app/Http/Controllers/BusinessesController.php
-
-// copied relative path by ctrl+alt+shift+C
-// app/Http/Controllers/BusinessesController.php
+    return array_sum($pairCounter);
+}
